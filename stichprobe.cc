@@ -13,7 +13,7 @@ int main() {
     }
     fin.close();
     double mean = double(sum)/234;
-    std::cout << mean << std::endl;
+    std::cout << "mean: " << mean << std::endl;
 
     //calculating variance
     std::ifstream fin_var("datensumme.txt");
@@ -24,7 +24,7 @@ int main() {
     }
     fin_var.close();
     double var = var_sum / 234;
-    std::cout << var << std::endl;
+    std::cout << "variance: " << var << std::endl;
     double std_dev = sqrt(var);
-    std::cout << std_dev << std::endl;
+    std::cout << "standard deviation: " << std_dev << std::endl;
 }

@@ -3,6 +3,7 @@
 #include <cmath>
 
 int main() {
+    // 2a)
     // declaring streams
     std::ifstream fin("datensumme.txt");
     std::ifstream fin_var("datensumme.txt");
@@ -33,4 +34,23 @@ int main() {
     fin.close();
     fout_means.close();
     fout_vars.close();
+
+    // 2b)
+
+    std::ifstream mean_in("mittelwerte.txt");
+    std::ifstream var_in("varianzen.txt");
+
+    double sum_of_means = 0;
+    double sum_of_vars = 0;
+    double m;
+    double v;
+    for(int j = 0; j < 26; j++){
+        mean_in >> m;
+        var_in >> v;
+        sum_of_means += m;
+        sum_of_vars += v;     
+    }
+    std::cout << "mean: " << sum_of_means/26 << std::endl;
+    std::cout << "variance: " << sum_of_vars/26 << std::endl;
+    std::cout << "variace with Bessels correction: " << sum_of_vars/25 << std::endl;
 }
